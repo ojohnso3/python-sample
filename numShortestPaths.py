@@ -3,15 +3,15 @@ class InvalidInputException(Exception):
         return "Invalid Input given."
 
 def numShortestPaths(g, start, end):
-    """graph, start node, end node -> int
-    Purpose: find the number of shortest paths between two nodes in a graph
-    Raises: raise InvalidInputException if an input is None, or
-    if start or end are not in g"""
-
+    """ Finds the number of shortest paths between two nodes in a graph
+    Takes in a graph, start node, and end node, and returns an integer
+    denoting how many shortest paths there are between the two nodes in
+    in the graph.
+    """
     if g == None or start == None or end == None:
-        raise InvalidInputException("Input is null")
+        raise InvalidInputException("Input is null.")
     if not g.containsVertex(start) or not g.containsVertex(end):
-        raise InvalidInputException("doesn't contain source")
+        raise InvalidInputException("Doesn't contain source.")
     nodes = []
     nodes.append(start)
     # Adds two decorations to the vertices
