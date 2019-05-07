@@ -2,23 +2,14 @@ from heappriorityqueue import *
 from mygraph import *
 
 def dijkstra(g, src):
-    """ Calculate the shortest path tree from the src in the input
-    connected graph g using Dijkstra's algorithm. The elements attached
-    to the edges should be the distances. Must run in O((|E| + |V|) log |V|)
-    time using the provided HeapPriorityQueue data structure.
-
-    Returns the shortest path tree in the form of a new MyGraph object.
-    Do not modify the input MyGraph instance.
-
-    Raise the InvalidInputException if input is None or if src is not in g.
-
-    Note: To access the actual vertices in the HeapPriorityQueue,
-    you need to call pop().value(), not just pop().
+    """ Calculates the shortest path tree from the source in the input
+    connected graph g using Dijkstra's algorithm.
+    Runs in O((|E| + |V|) log |V|) time using a HeapPriorityQueue data structure.
     """
     if g == None or src == None:
-        raise InvalidInputException("null")
+        raise InvalidInputException("Null input.")
     if not g.containsVertex(src):
-        raise InvalidInputException("doesn't contain source")
+        raise InvalidInputException("Doesn't contain source.")
     new_graph = MyGraph()
     PQ = HeapPriorityQueue()
     # Sets all decorations for nodes and adds nodes into PQ and new_graph
